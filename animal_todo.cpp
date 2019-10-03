@@ -1,5 +1,7 @@
 #include <iostream>
 
+// TODO: Mammals, reptiles and birds to  change printAnimalInfo() method from Animal to show all
+//       particular info of each class(mammals, reptiles and birds)
 // TODO: finish mammal, bird and reptile class
 // TODO: Once classes are finished, refactor to .h and .cpp files
 // TODO: Careful with private attributes, as you cannot access them out of the class
@@ -7,16 +9,19 @@
 
 class Animal { // Base class
   private:  // Access specifier
-        std::string name; // atribute (Pointer to a chart)
-        std::string specie; // atribute (Pointer to a chart)
+        
 
   public: // Access specifier
+        std::string name; // atribute 
+        std::string specie; // atribute 
+        std::string animalClass; // atribute
 
-    Animal(std::string nam, std::string speci){
+    Animal(std::string nam, std::string speci, std::string animalClas){
         // TODO: no entiendo muy bien lo de los nombres, se tienen que
         //       llamar diferente para poder diferenciarlos pero son lo mismo.
         name = nam;
         specie = speci;
+        animalClass = animalClas;
         std::cout<<"Constructor\n"<<std::endl;
 
     }
@@ -52,7 +57,7 @@ class Mammal:public Animal{
     /*VOY POR AQUÍ, ME QUEDA ENTENDER COMO CREO UN CONSTRUCTOR EN LA CLASE DERIVADA,
     QUE COJA LOS MISMOS ARGUMENTOS QUE LA CLASE BASE Y 1 MÁS
     */
-   Mammal(std::string name,std::string specie, std::string skll) : Animal(name, specie){
+   Mammal(std::string name,std::string specie, std::string animalClas, std::string skll) : Animal(name, specie, animalClass){
         skill = skll;
     }
 
