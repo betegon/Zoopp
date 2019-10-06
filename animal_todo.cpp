@@ -40,7 +40,7 @@ class Animal { // Base class
 
     ~Animal(){
 
-    };
+    }
 };
 
 // Derived class from Animal
