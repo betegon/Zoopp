@@ -32,8 +32,9 @@ class Animal { // Base class
     void isDangerous(){
         if (dangerous){
         std::cout <<"\n This animal is dangerous\n"<< std::endl;
-        }        
-        std::cout <<"\n This animal is not dangerous\n"<< std::endl;
+        } else{ 
+            std::cout <<"\n This animal is not dangerous\n"<< std::endl;
+        }
     }
             //flies, poisonous, swims, adorable
 
@@ -82,10 +83,11 @@ class Mammal:public Animal{
 class Reptile:public Animal{
   private:
     // TODO: check for private attributes / methods.
-  public:
     bool legs;
     bool longTongue;
     
+  public:
+   
  
    Reptile(std::string name, std::string animalClass, bool dangerous) : Animal(name, animalClass, dangerous){
         legs = false;
