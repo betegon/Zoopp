@@ -153,25 +153,9 @@ class Bird:public Animal{
 };
 
 
+int main (){	
 
-
-
-
-int main (){
-	
     // Good practice to initialize pointer variable to NULL
-    Animal *dog = NULL; 
-    // Create new Animal
-    dog = new Animal("dog","mammal",false);
-	
-    dog->printAnimalInfo();
-    dog->isDangerous();
-
-    // Delete object
-    // Do not forget to delete it
-    // This is why unique_ptr or shared_ptr should be used 
-    delete dog;
-
     Bird *birdy = NULL; 
     Mammal *doggy = NULL; 
     Reptile *snaky = NULL;
@@ -186,7 +170,11 @@ int main (){
     doggy->isDangerous();
     doggy->setDomestic();
     doggy->printAnimalInfo();
+    // Delete object
+    // Do not forget to delete it
+    // This is why unique_ptr or shared_ptr should be used 
     delete doggy;
+    
 
     // Snaky
     snaky->printAnimalInfo();
