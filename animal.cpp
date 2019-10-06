@@ -1,31 +1,24 @@
 #include <iostream>
-#include "persona.h"
+#include "animal.h"
 
-class Animal { // Base class
-  private:  // Access specifier
-        std::string name; // atribute (Pointer to a chart)
-        std::string specie; // atribute (Pointer to a chart)
 
-  public: // Access specifier
-
-    Animal(std::string nam, std::string speci){
-        // TODO: no entiendo muy bien lo de los nombres, se tienen que
-        //       llamar diferente para poder diferenciarlos pero son lo mismo.
-        name = nam;
-        name = speci;
-    }
-
-    void printAnimalInfo();
-    void printSuperPowers();
-            //flies, poisonous, swims, adorable
-
-    ~Animal();
+Animal::Animal(std::string nam, std::string animalClas, bool dangerou){
+    // TODO: no entiendo muy bien lo de los nombres, se tienen que
+    //       llamar diferente para poder diferenciarlos pero son lo mismo.
+    name = nam;
+    dangerous = dangerou;
+    animalClass = animalClas;
 }
 
-
-
-
-## REPTILE, mammal, bird:
-bool flies
-bool poisonous
-bool
+void Animal::printAnimalInfo(){
+    std::cout<<"\nGENERAL INFORMATION: \n"<<"name: "<< name <<"\n"\
+              <<"Animal Class: "<< animalClass <<"\n"\
+              <<"Dangerous: "<< dangerous <<"\n";
+}
+void Animal::isDangerous(){
+    if (dangerous){
+    std::cout <<"\nThis animal is dangerous\n"<< std::endl;
+    } else{ 
+        std::cout <<"\nThis animal is not dangerous\n"<< std::endl;
+    }
+}

@@ -1,16 +1,8 @@
 #include <iostream>
 
-// TODO: Mammals, reptiles and birds to  change printAnimalInfo() method from Animal to show all
-//       particular info of each class(mammals, reptiles and birds)
-// TODO: finish mammal, bird and reptile class
 // TODO: Once classes are finished, refactor to .h and .cpp files
-// TODO: Careful with private attributes, as you cannot access them out of the class
-//       so doing perro->name will throw an error.
 
 class Animal { // Base class
-  private:  // Access specifier
-        
-
   public: // Access specifier
         bool dangerous; // atribute 
         std::string name; // atribute 
@@ -36,11 +28,7 @@ class Animal { // Base class
             std::cout <<"\nThis animal is not dangerous\n"<< std::endl;
         }
     }
-            //flies, poisonous, swims, adorable
-
-    ~Animal(){
-
-    }
+    ~Animal(){}
 };
 
 // Derived class from Animal
