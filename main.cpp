@@ -3,8 +3,6 @@
 #include "reptile.h"
 #include "bird.h"
 
-
-
 int main (){	
 
     // Good practice to initialize pointer variable to NULL
@@ -27,7 +25,6 @@ int main (){
     // This is why unique_ptr or shared_ptr should be used 
     delete doggy;
     
-
     // Snaky
     snaky->printAnimalInfo();
     snaky->isDangerous();
@@ -44,5 +41,4 @@ int main (){
     delete birdy;
 
 	return 0;
-
 }

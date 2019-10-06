@@ -7,12 +7,12 @@
 // Derived class from Animal
 // Mammal publicly inheriting Animal
 class Mammal:public Animal{
-  private:
+  private: // Access specifier
     bool domestic;
     bool horns;
     std::string skill; 
-  public:
-
+  
+  public: // Access specifier
    Mammal(std::string name, std::string animalClass, bool dangerous, std::string skll) : Animal(name, animalClass, dangerous){
         skill = skll;
         horns = false;
@@ -40,5 +40,4 @@ class Mammal:public Animal{
 
     }
 };
-
 #endif

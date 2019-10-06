@@ -4,17 +4,14 @@
 #include <iostream>
 #include "animal.h"
 
-
 // Derived class from Animal
 // Reptile publicly inheriting Animal
 class Reptile:public Animal{
-  private:
- 
+  private: // Access specifier
     bool legs;
     bool longTongue;
     
-  public:
-
+  public: // Access specifier
     Reptile(std::string name, std::string animalClass, bool dangerous) : Animal(name, animalClass, dangerous){
         legs = false;
         longTongue = false;
@@ -40,5 +37,4 @@ class Reptile:public Animal{
         longTongue = true;
     }
 };
-
 #endif
