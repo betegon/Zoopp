@@ -25,8 +25,9 @@ class Animal { // Base class
     }
 
     void printAnimalInfo(){
-        std::cout<< name <<"\n" << animalClass <<"\n"<< dangerous <<"\n"<< std::endl;
-        
+        std::cout<<"\nGENERAL INFORMATION: \n"<<"name: "<< name <<"\n"\
+                 <<"Animal Class: "<< animalClass <<"\n"\
+                 <<"Dangerous: "<< dangerous <<"\n";
     }
     void isDangerous(){
         if (dangerous){
@@ -36,7 +37,9 @@ class Animal { // Base class
     }
             //flies, poisonous, swims, adorable
 
-    ~Animal();
+    ~Animal(){
+
+    };
 };
 
 // Derived class from Animal
@@ -49,18 +52,26 @@ class Mammal:public Animal{
     bool horns;
     std::string skill; 
     
-    /*VOY POR AQUÍ, ME QUEDA ENTENDER COMO CREO UN CONSTRUCTOR EN LA CLASE DERIVADA,
-    QUE COJA LOS MISMOS ARGUMENTOS QUE LA CLASE BASE Y 1 MÁS
-    */
-   Mammal(std::string name, std::string animalClas, bool dangerous, std::string skll) : Animal(name, animalClass, dangerous){
+ 
+   Mammal(std::string name, std::string animalClass, bool dangerous, std::string skll) : Animal(name, animalClass, dangerous){
         skill = skll;
+        horns = false;
+        domestic = false;
     }
-
-    void setHorns(bool h){
-        horns = h;
+    
+    void printAnimalInfo(){
+        Animal::printAnimalInfo();
+        // first show general information
+        std::cout<<"\nSPECIFIC INFORMATION: \n"\
+                 <<"Skill: "<< skill <<"\n"\
+                 <<"Horns: "<< horns <<"\n"\
+                 <<"Domestic: "<< domestic <<"\n"<< std::endl;
+    }
+    void setHorns(){
+        horns = true;
     } 
-    void setDomestic(bool d){
-        domestic = d;
+    void setDomestic(){
+        domestic = true;
     }
 };
 
@@ -74,17 +85,26 @@ class Reptile:public Animal{
   public:
     bool legs;
     bool longTongue;
-    /*VOY POR AQUÍ, ME QUEDA ENTENDER COMO CREO UN CONSTRUCTOR EN LA CLASE DERIVADA,
-    QUE COJA LOS MISMOS ARGUMENTOS QUE LA CLASE BASE Y 1 MÁS
-    */
-   Reptile(std::string name, std::string animalClas, bool dangerous) : Animal(name, animalClass, dangerous){
+    
+ 
+   Reptile(std::string name, std::string animalClass, bool dangerous) : Animal(name, animalClass, dangerous){
+        legs = false;
+        longTongue = false;
     }
-
-    void setLegs(bool l){
-        legs = l;
+    
+    void printAnimalInfo(){
+        Animal::printAnimalInfo();
+        // first show general information
+        std::cout<<"\nSPECIFIC INFORMATION: \n"\
+                 <<"Legs: "<< legs <<"\n"\
+                 <<"LongTongue: "<< longTongue <<"\n"\
+                 << std::endl;
+    }
+    void setLegs(){
+        legs = true;
     } 
-    void setLongeTongue(bool l){
-        longTongue = l;
+    void setLongeTongue(){
+        longTongue = true;
     }
 };
 
@@ -92,9 +112,10 @@ class Reptile:public Animal{
 
 
 
+
 int main (){
-	std::cout<<"Before the constructor"<<std::endl;
-	// Good practice to initialize pointer variable to NULL
+	
+    // Good practice to initialize pointer variable to NULL
     Animal *dog = NULL; 
     // Create new Animal
     dog = new Animal("dog","mammal",false);
@@ -107,16 +128,24 @@ int main (){
     // This is why unique_ptr or shared_ptr should be used 
     delete dog;
     
-    Mammal *perrete1 = NULL; 
-    // Create new Animal
-    perrete1 = new Mammal("dog","mammal",false,"volador");
-	
-    perrete1->printAnimalInfo();
-    perrete1->isDangerous();
+    Mammal *doggy = NULL; 
+    Reptile *snaky = NULL;
     
-    std::cout<<"Atributos del perrete1\n"<< perrete1->skill <<  std::endl;
+    // Create new Animal
+    doggy = new Mammal("Doggy","Mammal",false,"jumper");
+	snaky = new Reptile("Python","Reptile",true);
+    
+    doggy->printAnimalInfo();
+    doggy->isDangerous();
+    doggy->setDomestic();
+    doggy->printAnimalInfo();
+    delete doggy;
 
-
+    snaky->printAnimalInfo();
+    snaky->isDangerous();
+    snaky->setLongeTongue();
+    snaky->printAnimalInfo();
+    delete snaky;
 	return 0;
 
 }
